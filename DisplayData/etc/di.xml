@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Praveen\DisplayData\Api\ModelRepositoryInterface"
+                type="Praveen\DisplayData\Model\ModelRepository" />
+    <preference for="Praveen\DisplayData\Api\Data\ModelInterface"
+                type="Praveen\DisplayData\Model\Model" />
+</config>

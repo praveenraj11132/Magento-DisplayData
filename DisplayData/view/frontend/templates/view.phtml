@@ -1,0 +1,47 @@
+<?php
+$cars = $this->fetchData();
+?>
+
+<form method="post" action="<?= $block->getAddCarPostUrl() ?>">
+   <fieldset>
+       <div>
+            <label for="Name"><?= __("Name") ?></label>
+           <input type="text" name="Name" id="Name" />
+      </div>
+       <div>
+            <label for="Email"><?= __("Email") ?>
+           <input type="text" name="Email" id="Email" />
+       </div>
+       <div>
+            <label for="Telephone"><?= __("Telephone") ?>
+           <input type="text" name="Telephone" id="Telephone" />
+       </div>
+      <input type="submit" value="<?= __("Submit") ?>" />
+   </fieldset>
+</form>
+
+<?php if (count($cars) > 0): ?>
+ <table border="1">
+      <tr>
+         <th><?= __("Id") ?></th>
+          <th><?= __("Name") ?></th>
+            <th><?= __("Email") ?></th>
+           <th> <?= __("Telephone") ?></th>
+           
+        </tr>
+       <?php foreach ($cars as $car): ?>
+            <tr>
+               <td><?= $car['Id'] ?></td>
+               <td><?= $car['Name'] ?></td>
+              <td><?= $car['Email'] ?></td>
+              <td><?= $car['Telephone'] ?></td>
+             <td><a href="<?php echo $block->getDeleteUrl().'Id='.$car['Id'];?>">Delete</a></td>
+           </tr>
+      <?php endforeach; ?>
+    </table>
+<?php else: ?>
+    <h1><?= __("You have no cars yet :(") ?></h1>
+<?php endif; ?>
+
+
+
